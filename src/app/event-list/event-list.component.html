@@ -1,0 +1,29 @@
+<input type="button" value="search" (click)="getConcert()">
+
+<div *ngIf='concerts.resultsPage.results.event.id == 3037536 '></div>
+
+<table>
+  <div *ngFor="let element of concerts.resultsPage.results.event">
+
+    <tr>
+      <th>Nom du concert</th>
+      <td>{{element.displayName}}</td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td>{{element.type}}</td>
+    </tr>
+    <tr>
+      <th>URI</th>
+      <td>{{element.uri}}</td>
+    </tr>
+    <tr>
+      <input type="button" value="More Info" (click)="getConcertDetail(element.id)">
+    </tr>
+  </div>
+
+</table>
+
+<div>{{concertDetails}}</div>
+
+
