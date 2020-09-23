@@ -13,5 +13,5 @@ export class ApiConcertService {
 
 
   getEvents(): Observable<any>{
-    return this.http.get('https://api.songkick.com/api/3.0/events.json?apikey=926QLoynaFfTnoup&location=geo:45.7542305,4.8386187');
+    return this.http.get('https://api.songkick.com/api/3.0/events.json?apikey=926QLoynaFfTnoup&location=clientip');
 }}

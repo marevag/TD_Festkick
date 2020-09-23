@@ -1,0 +1,9 @@
+th, tr{
+  padding: 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table{
+  justify-content: center;
+align-items: center;}
