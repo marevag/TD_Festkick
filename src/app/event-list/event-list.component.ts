@@ -14,6 +14,7 @@ export class EventListComponent implements OnInit {
   concerts: any;
   concertDetails: any;
 
+
   constructor(private http: HttpClient, private API: ApiConcertService) { }
 
   ngOnInit(): void {
@@ -25,9 +26,10 @@ export class EventListComponent implements OnInit {
     err => console.log('err'),
       () => console.log('get concert complete'));
   }
-  /*public getConcertDetail(element: any): Observable<any>{
-    return this.http.get('');
-  }*/
+  public getConcertDetail(idtemp: any): void{
+    // tslint:disable-next-line:max-line-length
+    this.http.get('https://api.songkick.com/api/3.0/events/' + idtemp + '.json?apikey=926QLoynaFfTnoup').subscribe((data) => { this.concertDetails = data; });
+  }
 
 
 }

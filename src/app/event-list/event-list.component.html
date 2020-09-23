@@ -1,7 +1,7 @@
-<input type="button" value="search" (click)="getConcert()">
+<input type="button" class="btn btn-primary" value="search" (click)="getConcert()">
 
 <div *ngIf='concerts.resultsPage.results.event.id == 3037536 '></div>
-
+<!--
 <table>
   <div *ngFor="let element of concerts.resultsPage.results.event">
 
@@ -14,16 +14,63 @@
       <td>{{element.type}}</td>
     </tr>
     <tr>
-      <th>URI</th>
-      <td>{{element.uri}}</td>
+      <th>URL</th>
+      <td><a href='{{element.uri}}'>Le concert</a></td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <td>{{element.start.date}}</td>
+    </tr>
+    <tr>
+      <th>Heure</th>
+      <td>{{element.start.time}}</td>
     </tr>
     <tr>
       <input type="button" value="More Info" (click)="getConcertDetail(element.id)">
     </tr>
   </div>
-
+</table>
+-->
+<table class="table">
+  <div *ngFor="let element of concerts.resultsPage.results.event">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Nom du Concert</th>
+    <th scope="col">Type</th>
+    <th scope="col">Date</th>
+    <th scope="col">Heure</th>
+    <th scope="col">URL</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th>{{element.displayName}}</th>
+    <td>{{element.type}}</td>
+    <td>{{element.start.date}}</td>
+    <td>{{element.start.time}}</td>
+    <td><a href=" {{element.uri}}">Aller au Concert</a></td>
+  </tr>
+  </tbody>
+  </div>
 </table>
 
-<div>{{concertDetails}}</div>
+
+
+<!--
+<table>
+    <div *ngFor="let details of concertDetails.resultsPage.results.event.start">
+    <tr>
+      <th>Date</th>
+      <td>{{details.date}}</td>
+    </tr>
+    <br>
+    <tr>
+      <th>Heure</th>
+      <td>{{details.time}}</td>
+    </tr>
+    <br>
+    </div>
+</table>
+</div> -->
 
 
